@@ -12,16 +12,18 @@
 - [x] T008 fasrun 命令行骨架（bin 同时提供 fasrun 与 fas；`--json`、固定退出码与非交互运行；init 含 AGENTS.md 与 CLAUDE.md 引用；login 设备授权；其余命令先声明参数与帮助）— 对应 R-platform-015、R-platform-004、D-10、D-5；依赖 T007；修改范围 apps/fasrun-dev-cli/、tsconfig.json；用例 TC-PLATFORM-045（R-platform-015.S1）、TC-PLATFORM-060（R-platform-015.S2）、TC-PLATFORM-062（R-platform-015.S4）、TC-PLATFORM-063（R-platform-015.S5）、TC-PLATFORM-064（R-platform-015.S6）、TC-PLATFORM-065（R-platform-015.S7）、TC-PLATFORM-066（R-platform-015.S8）、TC-PLATFORM-013（R-platform-004.S4）
 - [x] T009 [P] test-utils 测试宿主与 Testcontainers — 对应 R-platform-010、D-14；依赖 T006；修改范围 packages/test-utils/；用例 TC-PLATFORM-032（R-platform-010.S1）、TC-PLATFORM-033（R-platform-010.S2）
 - [x] T010 插件脚手架与九个能力域插件骨架 — 对应 R-platform-006、D-6；依赖 T008；修改范围 packages/cli-templates/、apps/fasrun-dev-cli/、apps/fasrun-core-svc/、apps/fasrun-connect-svc/、plugins/、tsconfig.json；用例 TC-PLATFORM-018（R-platform-006.S1）、TC-PLATFORM-019（R-platform-006.S2）、TC-PLATFORM-020（R-platform-006.S3）
-- [ ] T011 表规范、标识工具、数据库角色与样例表 identity.organization — 对应 R-platform-007、D-7；依赖 T009、T010；修改范围 packages/contracts-core/、packages/backend-defaults/、plugins/identity/；用例 TC-PLATFORM-021（R-platform-007.S1）、TC-PLATFORM-022（R-platform-007.S2）、TC-PLATFORM-023（R-platform-007.S3）
+- [ ] T011 表规范、标识工具、数据库角色与样例表 identity.organization — 对应 R-platform-007、D-7；依赖 T009、T010、T021；修改范围 packages/contracts-core/、packages/backend-defaults/、plugins/identity/；用例 TC-PLATFORM-021（R-platform-007.S1）、TC-PLATFORM-022（R-platform-007.S2）、TC-PLATFORM-023（R-platform-007.S3）
 - [ ] T012 fasrun migrate 与基础数据同步 — 对应 R-platform-008、D-8；依赖 T011；修改范围 packages/backend-defaults/、packages/test-utils/、apps/fasrun-dev-cli/；用例 TC-PLATFORM-024（R-platform-008.S1）、TC-PLATFORM-025（R-platform-008.S2）、TC-PLATFORM-026（R-platform-008.S3）、TC-PLATFORM-027（R-platform-008.S4）
 - [ ] T013 [P] 迁移检查 — 对应 R-platform-009、D-9；依赖 T012；修改范围 tools/migration-check/、.squawk.toml、.github/workflows/；用例 TC-PLATFORM-028（R-platform-009.S1）、TC-PLATFORM-029（R-platform-009.S2）、TC-PLATFORM-030（R-platform-009.S3）、TC-PLATFORM-031（R-platform-009.S4）
-- [ ] T014 [P] 规格解析、fasrun spec validate 与 fasrun check — 对应 R-spec-001、R-spec-002、R-platform-015、D-11、D-10；依赖 T010；修改范围 plugins/spec/spec-common/、apps/fasrun-dev-cli/、fasrun/config.yaml、fasrun/README.md、.github/workflows/；用例 TC-SPEC-001（R-spec-001.S1）、TC-SPEC-002（R-spec-001.S2）、TC-SPEC-003（R-spec-001.S3）、TC-SPEC-004（R-spec-001.S4）、TC-SPEC-005（R-spec-001.S5）、TC-SPEC-006（R-spec-001.S6）、TC-SPEC-007（R-spec-002.S1）、TC-SPEC-008（R-spec-002.S2）、TC-SPEC-009（R-spec-002.S3）、TC-SPEC-010（R-spec-002.S4）、TC-SPEC-011（R-spec-002.S5）、TC-PLATFORM-061（R-platform-015.S3）
+- [ ] T014 [P] 规格解析、fasrun spec validate 与 fasrun check — 对应 R-spec-001、R-spec-002、R-platform-015、D-11、D-10；依赖 T010、T021；修改范围 plugins/spec/spec-common/、apps/fasrun-dev-cli/、fasrun/config.yaml、fasrun/README.md、.github/workflows/；用例 TC-SPEC-001（R-spec-001.S1）、TC-SPEC-002（R-spec-001.S2）、TC-SPEC-003（R-spec-001.S3）、TC-SPEC-004（R-spec-001.S4）、TC-SPEC-005（R-spec-001.S5）、TC-SPEC-006（R-spec-001.S6）、TC-SPEC-007（R-spec-002.S1）、TC-SPEC-008（R-spec-002.S2）、TC-SPEC-009（R-spec-002.S3）、TC-SPEC-010（R-spec-002.S4）、TC-SPEC-011（R-spec-002.S5）、TC-PLATFORM-061（R-platform-015.S3）
 - [ ] T015 现行规格骨架 — 对应 R-spec-003、D-12；依赖 T014；修改范围 fasrun/specs/；用例 TC-SPEC-012（R-spec-003.S1）
 - [ ] T016 规格归档 fasrun spec archive — 对应 R-spec-004、D-13；依赖 T015；修改范围 plugins/spec/spec-common/、apps/fasrun-dev-cli/；用例 TC-SPEC-013（R-spec-004.S1）、TC-SPEC-014（R-spec-004.S2）
 - [ ] T017 [P] 「星河科技」数据集与 fasrun seed（以 fasrun_app 经 withOrg 写入） — 对应 R-platform-011、D-15；依赖 T012；修改范围 packages/test-utils/、apps/fasrun-dev-cli/；用例 TC-PLATFORM-034（R-platform-011.S1）、TC-PLATFORM-035（R-platform-011.S2）、TC-PLATFORM-036（R-platform-011.S3）
 - [ ] T018 [P] 容器镜像与漏洞扫描 — 对应 R-platform-013、D-17；依赖 T012；修改范围 deploy/docker/、.github/workflows/；用例 TC-PLATFORM-041（R-platform-013.S1）
 - [ ] T019 Helm chart、k3d 一键部署与每日完整集 — 对应 R-platform-014、D-18；依赖 T018；修改范围 deploy/helm/、deploy/k3d/、.github/workflows/；用例 TC-PLATFORM-042（R-platform-014.S1）、TC-PLATFORM-043（R-platform-014.S2）、TC-PLATFORM-044（R-platform-014.S3）
 - [ ] T020 收尾：归档 SF-1 — 对应 R-spec-004、D-13；依赖 T005、T013、T016、T017、T019；修改范围 fasrun/；用例 无新增（完成标准：`fasrun spec validate fasrun/` 通过，变更目录位于 changes/archive/ 下）
+- [ ] T021 脚手架回归改用独立夹具 — 对应 R-platform-006、D-6；依赖 T010；修改范围 apps/fasrun-dev-cli/src/plugin-new.test.ts、apps/fasrun-dev-cli/test/fixtures/plugin-new/、apps/fasrun-dev-cli/vitest.config.ts（排除夹具目录）、apps/fasrun-dev-cli/tsconfig.json（纳入 vitest.config.ts）；用例 TC-PLATFORM-067（R-platform-006.S4），保留 TC-PLATFORM-018、019、020
+- [ ] T022 品牌规范同步到 v1.4 — 对应 R-platform-018；修改范围 docs/brand-and-naming.md、tools/scripts/src/repo-config.test.ts（品牌文档只断言带版本号，不写死版本）；用例 TC-PLATFORM-056（R-platform-018.S3）
 
 ## 说明
 
@@ -39,4 +41,5 @@
 - 各任务都可以同时修改根 package.json 的依赖与脚本、pnpm-lock.yaml 与 .changeset/ 中本任务的变更说明，不再逐项列出。
 - 各任务都可以同时修改根 tsconfig.json 的 references，以收录本任务新增的包。
 - 引入新检查的任务（如 T002 的 lint 与 format、T005 的许可声明检查、T013 的迁移检查）可以同时修正已合并代码中不符合该检查的部分，并在 PR 中列出这些修正。
+- 修订后新增的场景（R-platform-006.S4）接续已用的最大用例编号（TC-PLATFORM-067），已分配的用例编号不变。
 - T020 只修改 fasrun/：用 `fasrun spec archive` 归档本变更目录，规格增量合并进 fasrun/specs/。

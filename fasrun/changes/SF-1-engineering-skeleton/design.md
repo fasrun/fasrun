@@ -81,6 +81,7 @@
   3. 先在临时目录渲染，全部成功后再移入 `plugins/<插件>/<插件>-<角色>`；
   4. 注册：后端角色写入宿主 `src/plugins.ts` 中 `// fasrun:plugins:begin` 与 `// fasrun:plugins:end` 之间的导入，并把依赖加入宿主的 `package.json` 与根 `tsconfig.json` 的 `references`。宿主按插件归属选择：connect 归 fasrun-connect-svc，其余归 fasrun-core-svc；`--host` 可以指定。
 - 九个能力域插件的 `-common` 与 `-backend` 骨架由该命令生成后提交，生成命令记录在任务的 PR 中。
+- 回归：预期夹具放在 `apps/fasrun-dev-cli/test/fixtures/plugin-new/<角色>/`，是生成结果的副本，受版本控制；测试在临时工作区运行实际命令，逐文件比较清单与内容。有意修改模板时，夹具与模板在同一 PR 中修改并经评审。已提交的能力域插件只检查在宿主中的注册，其余由各自任务的构建、代码检查与测试覆盖。
 
 ### D-7 数据库表规范与样例表
 对应需求：R-platform-007
