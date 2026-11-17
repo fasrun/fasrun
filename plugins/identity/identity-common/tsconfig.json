@@ -2,18 +2,10 @@
   "extends": "../../../tools/tsconfig/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist/tsc",
-    "rootDir": ".",
+    "rootDir": "src",
     "emitDeclarationOnly": true,
     "types": ["node"],
     "customConditions": ["@fasrun/source"]
   },
-  "include": ["src/**/*.ts", "vitest.config.ts", "src/roles.json"],
-  "references": [
-    {
-      "path": "../../../packages/contracts-core"
-    },
-    {
-      "path": "../../governance/governance-common"
-    }
-  ]
+  "include": ["src/**/*.ts"]
 }

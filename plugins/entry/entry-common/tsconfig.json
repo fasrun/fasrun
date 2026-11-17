@@ -7,10 +7,5 @@
     "types": ["node"],
     "customConditions": ["@fasrun/source"]
   },
-  "include": ["src/**/*.ts"],
-  "references": [
-    {
-      "path": "../../../packages/contracts-core"
-    }
-  ]
+  "include": ["src/**/*.ts"]
 }

@@ -15,18 +15,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown",
-    "test": "vitest run --coverage.include=src/validation.ts --coverage.include=src/archive.ts --coverage.include=src/config/**/*.ts"
+    "build": "tsdown"
   },
   "devDependencies": {
     "@types/node": "24.19.2",
-    "@vitest/coverage-v8": "4.1.12",
     "tsdown": "0.23.5",
     "vitest": "4.1.12"
-  },
-  "dependencies": {
-    "@fasrun/contracts-core": "workspace:*",
-    "zod": "4.6.7",
-    "yaml": "2.9.1"
   }
 }

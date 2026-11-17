@@ -3,7 +3,6 @@
 import { existsSync } from 'node:fs';
 import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { validateRepoConfig } from './repo-config.js';
 
 export interface InitResult {
   /** Paths relative to the target directory; directories end with "/". */
@@ -38,11 +37,6 @@ high_risk_paths:
 
 agent:
   commands: []
-
-# Example: { id: security, paths: [src/auth/], domains: [security], checks: [security-review] }
-review_rules: []
-# Example: { id: architecture, domains: [architecture], reviewer_member_ids: [member-id], layers: [requirements, design] }
-prior_confirmations: []
 `;
 
 const AGENTS_MD = `# Instructions for coding agents
@@ -61,8 +55,6 @@ export function hasAgentsReference(text: string): boolean {
 }
 
 export async function runInit(target: string): Promise<InitResult> {
-  const errors = [...validateRepoConfig('fasrun.yaml', FASRUN_YAML), ...validateRepoConfig('Fasfile', FASFILE)];
-  if (errors.length) throw new Error(errors.join('\n'));
   const result: InitResult = { created: [], modified: [], unchanged: [] };
   await mkdir(target, { recursive: true });
 

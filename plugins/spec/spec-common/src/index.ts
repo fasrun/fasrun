@@ -6,10 +6,3 @@ export interface SpecStatus {
   plugin: typeof SPEC_PLUGIN_ID;
   status: 'ok';
 }
-
-export * from './validation.js';
-export * from './archive.js';
-
-export * from './config/index.js';
-export * from './control-plane.js';
-export * from './archive-authorization/index.js';

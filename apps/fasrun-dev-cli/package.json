@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "tsdown src/index.ts src/help.ts --format esm --platform node",
-    "test": "vitest run"
+    "test": "tsdown src/index.ts src/help.ts --format esm --platform node && vitest run"
   },
   "oclif": {
     "bin": "fasrun",
@@ -32,18 +32,12 @@
     "@fasrun/cli-templates": "workspace:*",
     "@oclif/core": "5.1.11",
     "prettier": "3.9.10",
-    "yaml": "2.9.1",
-    "@fasrun/plugin-spec-common": "workspace:*",
-    "@fasrun/backend-defaults": "workspace:*",
-    "drizzle-orm": "0.45.4",
-    "pg": "8.23.1",
-    "@fasrun/test-utils": "workspace:*"
+    "yaml": "2.9.1"
   },
   "devDependencies": {
     "@fasrun/fasrun-portal-web": "workspace:*",
     "@types/node": "24.19.2",
     "tsdown": "0.23.5",
-    "vitest": "4.1.12",
-    "@types/pg": "8.23.1"
+    "vitest": "4.1.12"
   }
 }

@@ -37,4 +37,3 @@ export {
   type ServiceRef,
   type ServiceScope,
 } from './services.js';
-export * from './context-services.js';
