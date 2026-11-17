@@ -1,9 +1,11 @@
 # Fasrun 品牌与技术规范
 
-**版本**：v1.3  
+**版本**：v1.4  
 **状态**：正式  
-**最后更新**：2026-11-10  
+**最后更新**：2026-11-17  
 **适用范围**：产品品牌、工程命名、文档架构、SEO 与实体信号
+
+**与技术方案的关系**：本规范确定品牌、对外表述与命名前缀；命令行子命令、环境变量、包、接口路径与 Kubernetes 资源的具体清单以技术方案 2.1 为准，两者不一致时按技术方案执行，并回写本规范。
 
 ## 1. 品牌定位
 
@@ -91,7 +93,7 @@
 ### 3.1 CLI
 - 主命令：`fasrun`
 - 可选别名：`fas`（安装脚本提供）
-- 常用子命令：`init`、`run`、`dev`、`check`、`apply`
+- 常用子命令：`init`、`check`、`spec validate`、`plugin`、`login`、`work`、`todo`、`setup`、`node join`、`migrate`、`seed`等（以技术方案与命令行帮助为准）
 
 ### 3.2 配置与规则文件
 - 主配置：`fasrun.yaml`
@@ -100,24 +102,22 @@
 
 ### 3.3 环境变量
 统一前缀 `FASRUN_`：  
-`FASRUN_API_KEY`、`FASRUN_ENDPOINT`、`FASRUN_RULESET_PATH`、`FASRUN_CONFIG`、`FASRUN_LOG_LEVEL`
+`FASRUN_API_KEY`、`FASRUN_ENDPOINT`、`FASRUN_CONFIG`、`FASRUN_LOG_LEVEL`
 
 ### 3.4 包命名
 | 生态 | 规范 |
 |------|------|
-| npm | `@fasrun/core`、`@fasrun/cli`、`@fasrun/sdk` |
+| npm | `@fasrun/*`：`@fasrun/cli`，以及按技术方案 2.1 命名的插件包与基础包（如 `@fasrun/plugin-<插件>-<角色>`、`@fasrun/backend-plugin-api`） |
 | PyPI | `fasrun`、`fasrun-cli` |
 | crates.io | `fasrun`、`fasrun-core`、`fasrun-cli` |
 | Go | `github.com/fasrun/fasrun`（Monorepo）或 `github.com/fasrun/fasrun-go` |
 
 ### 3.5 Kubernetes
-- API Group 分层：`policy.fasrun.dev`、`core.fasrun.dev`（预留）
-- 核心资源：`FasrunPolicy`（shortName: `fpol`）
 - Label / Annotation 前缀：`fasrun.dev/`
+- API Group `policy.fasrun.dev`、`core.fasrun.dev` 与资源 `FasrunPolicy`（shortName: `fpol`）只保留名称；当前不定义 CRD，策略存放在数据库与 Fasfile 中，由控制平面执行（技术方案 2.1）
 
 ### 3.6 Core API
-主域名优先 `api.fas.run`，路径 `/v1/`：  
-`POST /v1/specs/validate`、`POST /v1/runs`、`GET /v1/runs/{run_id}`、`POST /v1/runs/{run_id}/terminate`、`GET /v1/policies`
+自托管实例的接口路径为 `/api/<插件>/v<主版本>/<资源复数>`（技术方案 2.1、2.7）。`api.fas.run` 留给将来的托管服务，当前不提供接口。
 
 ## 4. 文档与 URL 架构
 
