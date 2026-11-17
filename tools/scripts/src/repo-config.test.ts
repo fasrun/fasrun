@@ -83,6 +83,7 @@ describe('naming and brand (R-platform-018)', () => {
     expect(paragraphs.slice(0, firstText).join('\n')).toContain('https://fasrun.dev');
     expect(paragraphs[firstText]).toBe(ENTITY_SENTENCE);
     expect(read('CONTRIBUTING.md')).toContain('docs/brand-and-naming.md');
-    expect(read('docs/brand-and-naming.md')).toContain('**版本**：v1.3');
+    // The guide carries a version line; the spec does not pin its number, so the test does not either.
+    expect(read('docs/brand-and-naming.md')).toMatch(/^\*\*版本\*\*：v\d+\.\d+ {2}$/m);
   });
 });
