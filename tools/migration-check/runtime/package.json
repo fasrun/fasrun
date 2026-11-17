@@ -1,8 +1,0 @@
-{
-  "name": "@fasrun/migration-check-runtime",
-  "private": true,
-  "license": "AGPL-3.0-only",
-  "dependencies": {
-    "drizzle-kit": "0.31.9"
-  }
-}

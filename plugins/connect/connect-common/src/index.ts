@@ -6,5 +6,3 @@ export interface ConnectStatus {
   plugin: typeof CONNECT_PLUGIN_ID;
   status: 'ok';
 }
-export * from './control-plane.js';
-export * from './state.js';
